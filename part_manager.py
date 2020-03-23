@@ -1,5 +1,6 @@
-from Tkinter import *
-import tkMessageBox
+from tkinter import *
+from tkinter import messagebox
+# import tkMessageBox
 from db import Database
 
 db = Database('store.db')
@@ -11,7 +12,7 @@ def populate_list():
 
 def add_item():
     if part_text.get() == '' or customer_text.get() =='' or retailer_text.get == '' or price_text.get =='':
-        tkMessageBox.showerror('Required Fields', 'Please include all fields')
+        messagebox.showerror('Required Fields', 'Please include all fields')
         return
     db.insert(part_text.get(), customer_text.get(), retailer_text.get(), price_text.get())
     parts_list.delete(0, END)
